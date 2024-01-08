@@ -1,1 +1,1 @@
-https://tsum-exe.github.io/home/gamingair/index.html
+https://tsum-exe.github.io/home/gamingair/
