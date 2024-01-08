@@ -69,6 +69,11 @@ section {
     z-index: 10;
     filter: drop-shadow(0px 0px 25px #6dc0ff23);
 }
+@media screen and (max-width: 1000px) {
+  .screen {
+    width: 27%;
+  }
+}
 
 .screen:after,
 .screen:before {
