@@ -58,7 +58,7 @@ section {
 }
 
 .screen {
-    width: 28vw;
+    width: 26vw;
     display: flex;
     border: 3px solid rgb(var(--primary-rgb) / 80%);
     aspect-ratio: 10 / 16;
