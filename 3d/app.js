@@ -50,13 +50,13 @@ scene.add(pointLight, ambientLight, pointLight2);
 // const pointLightHelper2 = new THREE.PointLightHelper( pointLight2, sphereSize );
 // scene.add( pointLightHelper2 );
 
-// const controls = new OrbitControls(camera, renderer.domElement);
+const controls = new OrbitControls(camera, renderer.domElement);
 
 
 function animate() {
     const t = document.body.getBoundingClientRect().top;
     requestAnimationFrame(animate);
-    // controls.update();
+    controls.update();
     
     object.rotation.y = 2.5+t/2500
     renderer.render(scene, camera);
