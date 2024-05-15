@@ -15,7 +15,7 @@ let object;
 
 const loader = new GLTFLoader();
 loader.load(
-    `untitled.glb`,
+    `asdf3.glb`,
     function (glb) {
       //If the file is loaded, add it to the scene
       object = glb.scene;
@@ -23,7 +23,7 @@ loader.load(
       object.rotation.x = -0.25
       
       scene.add(object);
-      object.rotation.y = 2
+      object.rotation.y = 4
     },
     function (xhr) {
       //While it is loading, log the progress
@@ -35,22 +35,28 @@ loader.load(
     }
   );
 
-
-const pointLight = new THREE.PointLight(0xffffff, 10, 0, 0);
+const controls = new OrbitControls(camera, renderer.domElement);
+const pointLight = new THREE.PointLight(0xffffff, 0.8, 0, 0.02);
 pointLight.position.set(-9, 5, 5);
-const pointLight2 = new THREE.PointLight(0xffffff, 10, 0, 0);
+const pointLight2 = new THREE.PointLight(0xffffff, 0.5, 0, 0.02);
 pointLight2.position.set(9, -5, -5);
 const ambientLight = new THREE.AmbientLight(0xffffff);
 
+const directionalLight = new THREE.DirectionalLight( 0xffffff, 3 );
+directionalLight.position.set(9,5,5)
+scene.add( directionalLight );
+
 scene.add(pointLight, ambientLight, pointLight2);
 
-// const sphereSize = 1;
-// const pointLightHelper = new THREE.PointLightHelper( pointLight, sphereSize );
-// scene.add( pointLightHelper );
-// const pointLightHelper2 = new THREE.PointLightHelper( pointLight2, sphereSize );
-// scene.add( pointLightHelper2 );
+const geometry = new THREE.TorusGeometry( 11, 1.7, 10, 25 ); 
+const material = new THREE.MeshStandardMaterial( { color: 0x555555, wireframe:true} ); 
+const torus = new THREE.Mesh( geometry, material ); 
 
-const controls = new OrbitControls(camera, renderer.domElement);
+torus.rotation.y = 0.5
+torus.rotation.x=-1
+torus.rotation.z=0.5
+
+scene.add( torus );
 
 
 function animate() {
@@ -58,7 +64,8 @@ function animate() {
     requestAnimationFrame(animate);
     controls.update();
     
-    object.rotation.y = 2.5+t/2500
+    object.rotation.y = 3.4
+    directionalLight.target = object
     renderer.render(scene, camera);
 }
 
