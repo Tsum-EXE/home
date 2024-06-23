@@ -1,21 +1,10 @@
-var lastScrollTop = 0;
-var doc = document.documentElement;
+let lastScrollTop = 0;
+const doc = document.documentElement;
 
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 }
 
-window.addEventListener("scroll", function(){ 
-     var st = window.scrollY || document.documentElement.scrollTop; 
-     var top = (window.scrollY || doc.scrollTop)  - (doc.clientTop || 0);
-     if (top >= 6000) {
-        document.querySelector('#cancan').classList.add("fadee")
-     } else if (top < 6000) {
-        document.querySelector('#cancan').classList.remove("fadee")
-     } 
-     lastScrollTop = st <= 0 ? 0 : st; 
-
-}, false);
 
 const ref1 = document.querySelectorAll(".ref1")
 const observer0 = new IntersectionObserver((entries) => {
@@ -202,9 +191,7 @@ const observer7 = new IntersectionObserver((entries) => {
                 iteration += 1 / (Math.floor(Math.random() * 5)+2); 
             }, 10);
         }
-        else {
-
-        }
+        
 
     });
 });

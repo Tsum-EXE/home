@@ -825,7 +825,6 @@ a {
     margin: 1rem;
     border-radius: 2rem;
     overflow: hidden;
-    /* cursor: pointer; */
 }
 a:hover {
     cursor:none;
@@ -1121,4 +1120,25 @@ h1.image {
 }
 body {
     cursor: none;
+}
+
+#variants {
+    height:700vh;
+}
+
+#variantinside {
+    text-align:center;
+    align-self:center;
+    position:sticky;
+    top:44vh;
+}
+
+#variantinside h2 {
+    color:white;
+    font-size:5rem;
+}
+
+#second {
+    color:white;
+    z-index:100000;
 }
