@@ -348,7 +348,7 @@ window.addEventListener('mousemove', (e) => {
   mouse.y = e.y;
 });
 
-// Smoothing factor for cursor movement speed (0 = smoother, 1 = instant)
+// Smoothing factor for cursor movement speed (0 = sezezmoother, 1 = instant)
 const speed = 0.3;
 
 // Start animation
